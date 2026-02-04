@@ -11,27 +11,25 @@ local function get_platform()
     -- Adjust these mappings based on how your tool names its releases
     local platform_map = {
         ["darwin"] = {
-            ["amd64"] = "darwin-amd64",
+            ["amd64"] = "darwin-x64",
             ["arm64"] = "darwin-arm64",
         },
         ["linux"] = {
-            ["amd64"] = "linux-amd64",
+            ["amd64"] = "linux-x64",
             ["arm64"] = "linux-arm64",
-            ["386"] = "linux-386",
         },
         ["windows"] = {
-            ["amd64"] = "windows-amd64",
-            ["386"] = "windows-386",
+            ["amd64"] = "windows-x64",
         },
     }
 
     local os_map = platform_map[os_name]
     if os_map then
-        return os_map[arch] or "linux-amd64" -- fallback
+        return os_map[arch] or "linux-x64" -- fallback
     end
 
     -- Default fallback
-    return "linux-amd64"
+    return "linux-x64"
 end
 
 --- Returns download information for a specific version
