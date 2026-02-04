@@ -34,6 +34,9 @@ utoo --version
 utoo --help
 ```
 
+> [!NOTE]  
+> If you see 4xx errors while using mise, you can set `MISE_GITHUB_TOKEN` or `GITHUB_TOKEN` to a [token generated from here](https://github.com/settings/tokens/new?description=MISE_GITHUB_TOKEN) which will likely fix the issue. The token does not require any scopes.
+
 ## Development
 
 ### Setting up development environment
@@ -75,7 +78,6 @@ Refer to the mise docs for detailed information:
 - [Lua modules reference](https://mise.jdx.dev/plugin-lua-modules.html) - Available Lua modules and functions
 - [Plugin publishing](https://mise.jdx.dev/plugin-publishing.html) - How to publish your plugin
 - [mise-plugins organization](https://github.com/mise-plugins) - Community plugins repository
-
 
 ## License
 
