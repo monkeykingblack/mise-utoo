@@ -9,7 +9,7 @@ function PLUGIN:Available(ctx)
     local per_page = 100
     local page = 1
     local result = {}
-    local github_token = os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
+    local github_token = os.getenv("MISE_GITHUB_TOKEN") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN")
     local headers = {
         ["Accpet"] = "application/vnd.github.v3+json",
     }
@@ -19,20 +19,12 @@ function PLUGIN:Available(ctx)
     end
 
     while true do
-        -- Example 1: GitHub Tags API (most common)
-        -- Replace <GITHUB_USER>/<GITHUB_REPO> with your tool's repository
-        -- local repo_url = "https://api.github.com/repos/<GITHUB_USER>/<GITHUB_REPO>/tags"
-
-        -- Example 2: GitHub Releases API (for tools that use GitHub releases)
-        -- local repo_url = "https://api.github.com/repos/<GITHUB_USER>/<GITHUB_REPO>/releases"
-
         local repo_url = "https://api.github.com/repos/utooland/utoo/tags"
             .. "?per_page="
             .. per_page
             .. "&page="
             .. page
 
-        -- mise automatically handles GitHub authentication - no manual token setup needed
         local resp, err = http.get({
             url = repo_url,
             headers = headers,
