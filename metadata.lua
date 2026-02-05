@@ -7,7 +7,7 @@ PLUGIN = { -- luacheck: ignore
     name = "utoo",
 
     -- Required: Plugin version (not the tool version)
-    version = "1.0.0",
+    version = "1.0.1",
 
     -- Required: Brief description of the tool
     description = "A mise tool plugin for utoo",
